@@ -1,0 +1,5 @@
+---
+set.lang: pt_br
+passwords.folder: accounts
+player.not.move: true
+...

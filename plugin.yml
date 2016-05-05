@@ -1,0 +1,20 @@
+name: SimpleAuthentication
+main: SimpleAuthentication\SimpleAuthentication
+version: 0.1
+api:
+    - 0.12.1
+    - 0.13.0
+    - 0.13.1
+    - 2.0.0
+author: RedstoneAlmeida
+
+commands:
+    simplelogin:
+        description: simplelogin
+        use: "/simplelogin"
+        permission: simplelogin.command
+
+permissions:
+    simplelogin.command:
+        description: "simplelogin"
+        default: op
