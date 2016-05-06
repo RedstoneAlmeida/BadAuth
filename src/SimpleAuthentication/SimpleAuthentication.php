@@ -92,7 +92,7 @@ class SimpleAuthentication extends PluginBase implements Listener{
              } 
              if(isset($args[1])){
                  switch(strtolower($args[1])){
-                     case "$args[0]":
+                     case "$args[1]":
                      $sender->getPlayer()->kick("§cSENHA INCORRETA!");
                      return false;
                     }
@@ -109,6 +109,17 @@ class SimpleAuthentication extends PluginBase implements Listener{
             ));
                $sender->sendMessage("§cSenha Retirada!");
                return false;
+               case "changepassword":
+                   if(isset($args[1])){
+                       $player = $sender->getPlayer()->getName();
+                                    @mkdir($this->getDataFolder() . $filesfolder."/");
+               $this->register = new Config($this->getDataFolder() . $filesfolder."/".  $player.".yml" , Config::YAML, Array(
+                   "password" => $args[1],
+                   "registred" => true,
+            ));
+            $player->sendMessage("§bSenha Trocada!");
+                   }
+                   
         }
     }
     
